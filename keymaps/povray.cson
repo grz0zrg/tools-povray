@@ -1,0 +1,2 @@
+'atom-text-editor':
+	'F8': 'povray:parse'

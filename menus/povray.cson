@@ -1,0 +1,14 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'POV-Ray'
+      'submenu': [
+        {
+          'label': 'Parse current file'
+          'command': 'povray:parse'
+        }
+      ]
+    ]
+  }
+]
