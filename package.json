@@ -8,6 +8,7 @@
     "atom": "*",
     "node": "*"
   },
+  "repository": "https://github.com/grz0zrg/tools-povray",
   "main": "./lib/init",
   "name": "tools-povray",
   "optionalDependencies": {}
