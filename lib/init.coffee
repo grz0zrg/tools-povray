@@ -5,6 +5,10 @@ path = require 'path'
 
 module.exports =
     config:
+        povrayPath:
+            type: 'string'
+            default: 'povray'
+            description: 'POV-Ray path'
         povrayArguments:
             type: 'string'
             default: '+Q11 +A -GS -GR'
@@ -171,7 +175,7 @@ module.exports =
         options =
             cwd: cwd
             env: process.env
-        command = "povray"
+        command = atom.config.get('tools-povray.povrayPath')
 
         @messages.setTitle('<span style="font-weight: bold; color: white;">Building ' + args[0] + ' ...</span>', true)
 
