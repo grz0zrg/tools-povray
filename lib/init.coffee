@@ -93,7 +93,9 @@ module.exports =
             args = args.concat (atom.config.get('tools-povray.povrayArguments').split(" "))
             if atom.config.get('tools-povray.povrayPreview')
                 args = args.concat (atom.config.get('tools-povray.previewArguments').split(" "))
-            args.push full_file_path
+            if process.platform == "win32"
+                args.push "/RENDER"
+            args.push "\""+full_file_path+"\""
 
             @compile(path.dirname(full_file_path), args)
 
@@ -175,7 +177,8 @@ module.exports =
         options =
             cwd: cwd
             env: process.env
-        command = atom.config.get('tools-povray.povrayPath')
+            shell: true
+        command = "\"" + atom.config.get('tools-povray.povrayPath') + "\""
 
         @messages.setTitle('<span style="font-weight: bold; color: white;">Building ' + args[0] + ' ...</span>', true)
 

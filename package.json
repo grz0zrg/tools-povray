@@ -2,7 +2,7 @@
   "dependencies": {
     "atom-message-panel": "^1.2.4"
   },
-  "description": "POV-Ray toolkit, add parsing reports and on save parsing/preview",
+  "description": "POV-Ray toolkit, add parsing reports and on save parsing/preview, work best under Unix, may work partially under Windows, does not work under Mac OS.",
   "devDependencies": {},
   "engines": {
     "atom": "*",
