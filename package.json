@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "description": "POV-Ray toolkit, add parsing reports and on save parsing/preview, work best under Unix, may work partially under Windows, does not work under Mac OS.",
   "devDependencies": {},
   "engines": {
@@ -12,5 +10,5 @@
   "main": "./lib/init",
   "name": "tools-povray",
   "optionalDependencies": {},
-  "version": "1.0.3"
+  "version": "1.0.4"
 }
