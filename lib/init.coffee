@@ -119,7 +119,7 @@ module.exports =
 
         @compilerMessages = @compilerMessages.join "\n"
 
-        compilerMessageRegex = /File '([a-zA-z\.\d:\/\\]+)' line (\d+): Parse (Warning|Error): ([a-zA-z#_\.\d\s\/{}()',"]+)(?=Fatal|File|$)/gm
+        compilerMessageRegex = /File '([\na-zA-z\.\d:\/\\-]+)' line (\d+): Parse (Warning|Error): ([a-zA-z#_\.\d\s\/{}()',"<>=\-]+)(?=Fatal|File|$)/gm
 
         warnings = 0
         errors = 0
@@ -138,7 +138,7 @@ module.exports =
             message = msg_type + ": " + messages_arr[4].replace(/(?:\r\n|\r|\n)/g, '')
 
             @messages.add new LineMessageView
-                file: messages_arr[1]
+                file: messages_arr[1].replace(/(?:\r\n|\r|\n)/g, '')
                 line: messages_arr[2]
                 preview: message
                 color: color
