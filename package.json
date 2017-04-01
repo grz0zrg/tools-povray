@@ -12,5 +12,5 @@
   "main": "./lib/init",
   "name": "tools-povray",
   "optionalDependencies": {},
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
