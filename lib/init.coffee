@@ -52,7 +52,7 @@ module.exports =
 
         active_text_editor = atom.workspace.getActiveTextEditor()
         if active_text_editor
-            if @validPOVRayFile active_text_editor.getPath()
+            if @validPOVRayFile(active_text_editor.getPath() or '')
                 @messages.show()
             else
                 @messages.hide()
@@ -62,7 +62,7 @@ module.exports =
         atom.workspace.onDidChangeActivePaneItem (editor) =>
             if editor
                 if editor.getPath
-                    if @validPOVRayFile editor.getPath()
+                    if @validPOVRayFile(editor.getPath() or '')
                         @messages.show()
                     else
                         @messages.hide()
@@ -77,7 +77,7 @@ module.exports =
                 if atom.config.get('tools-povray.compileOnSave')
                     if editor
                         if editor.getPath
-                            if validPOVRayFile(editor.getPath())
+                            if validPOVRayFile(editor.getPath() or '')
                                 atom.commands.dispatch(atom.views.getView(editor), 'povray:parse')
 
         @disposable = atom.commands.add 'atom-text-editor', 'povray:parse': (event) =>
